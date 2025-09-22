@@ -9,9 +9,8 @@
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body {
     font-family: 'Segoe UI', sans-serif;
-    background: linear-gradient(270deg, #0050e9, #0614b2, #000052, #fb0202);
-    background-size: 800% 800%;
-    animation: gradientBG 15s ease infinite alternate;
+    background: url("https://i.pinimg.com/1200x/5e/bc/98/5ebc9849b331c3c42697703ec009ea15.jpg") no-repeat center center fixed;
+    background-size: cover;
     color: white;
     text-align: center;
     min-height: 100vh;
@@ -19,11 +18,8 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-  }
-  @keyframes gradientBG {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+    position: relative;
+    z-index: 1;
   }
 
   .container {
@@ -63,8 +59,8 @@
   .avatar img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* menyesuaikan ukuran lingkaran */
-    border-radius: 50%; /* tetap berbentuk lingkaran */
+    object-fit: cover;
+    border-radius: 50%;
     transition: transform 0.3s ease;
   }
   .avatar img:hover {
@@ -74,13 +70,13 @@
   h1 { font-size: 22px; margin: 10px 0 5px; font-weight: bold; letter-spacing: 1px; }
   h2 { font-size: 16px; font-weight: 400; margin-bottom: 25px; opacity: 0.9; }
 
-  /* TOMBOL GLASSMORPHISM DENGAN PULSE */
+  /* TOMBOL GLASSMORPHISM */
   .btn {
     display: flex; 
     align-items: center; 
     justify-content: space-between;
     width: 100%;
-    background: rgba(255, 255, 255, 0.1); 
+    background: rgba(255, 255, 255, 0.15); 
     color: white;
     border-radius: 12px; 
     text-decoration: none; 
@@ -94,33 +90,13 @@
     cursor: pointer;
     animation: pulse 2s infinite;
   }
-  .btn {
-  display: flex; 
-  align-items: center; 
-  justify-content: space-between;
-  width: 100%;
-  max-width: 100%;
-  background: rgba(255, 255, 255, 0.1); 
-  color: white;
-  border-radius: 12px; 
-  text-decoration: none; 
-  font-size: 16px;
-  padding: 12px 18px; 
-  margin: 12px 0; 
-  backdrop-filter: blur(6px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  box-shadow: 0 0 8px rgba(255, 255, 255, 0.2); 
-  transition: all 0.3s ease-in-out;
-  cursor: pointer;
-  animation: pulse 2s infinite;
-}
 
-/* Efek hover */
-.btn:hover {
-  transform: scale(1.05); /* zoom in */
-  box-shadow: 0 0 18px rgba(255,255,255,0.6); /* shadow lebih kuat */
-  background: rgba(255,255,255,0.2); /* lebih terang */
-}
+  .btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 18px rgba(255,255,255,0.6);
+    background: rgba(255,255,255,0.25);
+  }
+
   @keyframes pulse {
     0% { transform: scale(1); }
     50% { transform: scale(1.03); }
@@ -132,14 +108,46 @@
   .btn img.share { width: 20px; height: 20px; opacity: 0.7; }
 
   /* SALJU HALUS */
-  .snow { position: absolute; top: -10px; width: 4px; height: 4px; background: white; border-radius: 50%; opacity: 0.7; pointer-events: none; animation: fall linear infinite; }
-  @keyframes fall { 0% { transform: translateY(0) translateX(0); opacity: 0.7; } 100% { transform: translateY(100vh) translateX(var(--x-move)); opacity: 0; } }
+  .snow {
+    position: absolute;
+    top: -10px;
+    width: 4px;
+    height: 4px;
+    background: white;
+    border-radius: 50%;
+    opacity: 0.7;
+    pointer-events: none;
+    animation: fall linear infinite;
+    z-index: 1;
+  }
+  @keyframes fall {
+    0% { transform: translateY(0) translateX(0); opacity: 0.7; }
+    100% { transform: translateY(100vh) translateX(var(--x-move)); opacity: 0; }
+  }
 
   /* FOOTER */
-  footer { text-align: center; font-size: 12px; padding: 15px 10px; opacity: 0.9; display: flex; flex-direction: column; align-items: center; gap: 8px; }
+  footer {
+    text-align: center;
+    font-size: 12px;
+    padding: 15px 10px;
+    opacity: 0.9;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    position: relative;
+    z-index: 2;
+  }
   footer .social-icons { display: flex; gap: 12px; }
-  footer .social-icons a img { width: 24px; height: 24px; transition: transform 0.3s ease, opacity 0.3s ease; }
-  footer .social-icons a:hover img { transform: scale(1.2); opacity: 1; }
+  footer .social-icons a img {
+    width: 24px;
+    height: 24px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+  footer .social-icons a:hover img {
+    transform: scale(1.2);
+    opacity: 1;
+  }
   footer .footer-text { font-size: 11px; opacity: 0.7; }
 
   @media (max-width: 480px) {
@@ -166,7 +174,7 @@
 
   <!-- JUDUL -->
   <h1>LINK LOGIN ALTERNATIF CIATOTO</h1>
-  <h2>Tiktok by : ragamduniaa</h2>
+  <h2>Support by Tiktok  : ragamduniaa</h2>
 
   <!-- TOMBOL -->
   <a href="https://transaksiok.com/register?referral_code=digma88" class="btn">
